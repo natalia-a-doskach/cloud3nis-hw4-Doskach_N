@@ -8,8 +8,14 @@ import {
   Pressable,
   ScrollView,
   Dimensions,
+  Image
 } from 'react-native';
-import {Context} from './Context';
+//import {Context} from './Context';
+import {changeIndex} from './Actions'
+import {deleteNote} from './Actions'
+//import { Icon } from 'react-native-elements'
+import store from './Store'
+import { connect } from 'react-redux'
 
 class HomeScreen extends React.Component {
   render() {
@@ -25,17 +31,22 @@ class HomeScreen extends React.Component {
           <ScrollView
             snapToInterval={Dimensions.get('screen').width}
             contentContainerStyle={{minHeight: '100%'}}>
-            {this.context.notes.map((note, index) => (
+            {
+             this.props.notes.map((note, index) => (
+             <View >
               <Pressable
                 style={styles.buttons}
                 key={index}
                 title={`${note.title}`}
                 onPress={() => {
-                  this.context.changeIndex(index);
+                  changeIndex(index);
                   this.props.navigation.navigate('Change');
                 }}>
                 <Text style={styles.text}>{note.title}</Text>
+
               </Pressable>
+<Pressable onPress={() => {deleteNote(index)} }><Image style={styles.image} source={require('./x.png')} /></Pressable>
+</View>
             ))}
           </ScrollView>
         </View>
@@ -44,7 +55,12 @@ class HomeScreen extends React.Component {
   }
 }
 
-HomeScreen.contextType = Context;
+const mapStateToProps = (state) => {
+    return {
+        notes: state.notes
+    }
+}
+//HomeScreen.contextType = Context;
 
 const styles = StyleSheet.create({
   container: {
@@ -75,10 +91,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 15,
     marginVertical: 3,
+    marginBottom: 0,
     borderRadius: 10,
     backgroundColor: '#BCDCF9',
     textColor: 'black',
   },
+    image: {
+      width: 30,
+      height: 30,
+      color: 'white',
+      backgroundColor: '#108afc',
+      borderRadius: 15,
+      elevation: 3,
+      alignSelf: 'center',
+    },
   text: {
     fontSize: 16,
     lineHeight: 21,
@@ -88,4 +114,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default connect(mapStateToProps)(HomeScreen);

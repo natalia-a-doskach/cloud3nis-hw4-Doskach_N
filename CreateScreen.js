@@ -12,8 +12,10 @@ import {
   Dimensions,
   SafeAreaView,
 } from 'react-native';
-import {Context} from './Context';
+//import {Context} from './Context';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+import {addNote} from './Actions'
+import store from './Store'
 
 class CreateScreen extends React.Component {
   state = {
@@ -88,9 +90,9 @@ class CreateScreen extends React.Component {
             let note = {
               title: this.state.title == '' ? 'Untitled' : this.state.title,
               note: this.state.note,
-              images: this.state.fileUris,
+              fileUris: this.state.fileUris,
             };
-            this.context.addNote(note);
+            addNote(note);
             this.props.navigation.navigate('Home');
           }}>
           <Text style={styles.text}>Save Note</Text>
@@ -100,7 +102,7 @@ class CreateScreen extends React.Component {
   }
 }
 
-CreateScreen.contextType = Context;
+//CreateScreen.contextType = Context;
 
 const styles = StyleSheet.create({
   container: {

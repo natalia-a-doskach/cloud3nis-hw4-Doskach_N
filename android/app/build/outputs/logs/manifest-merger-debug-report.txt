@@ -11,6 +11,7 @@ MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.99.0] C:\Users\Natalia
 MERGED from [:react-native-image-picker] C:\Users\Natalia\Documents\GitHub\cloud3nis-hw4-Doskach_N\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
 MERGED from [:react-native-safe-area-context] C:\Users\Natalia\Documents\GitHub\cloud3nis-hw4-Doskach_N\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] C:\Users\Natalia\Documents\GitHub\cloud3nis-hw4-Doskach_N\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-vector-icons] C:\Users\Natalia\Documents\GitHub\cloud3nis-hw4-Doskach_N\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.react:react-native:0.66.0] C:\Users\Natalia\.gradle\caches\transforms-3\548e983e2fa4cfa186578c41faedaeae\transformed\jetified-react-native-0.66.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Natalia\.gradle\caches\transforms-3\9341f36f0ce470d4b55127e33c2ce075\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [org.webkit:android-jsc:r250230] C:\Users\Natalia\.gradle\caches\transforms-3\7873a5158addb5bf75ec8bc5226b9f2a\transformed\jetified-android-jsc-r250230\AndroidManifest.xml:2:1-11:12
@@ -179,6 +180,8 @@ MERGED from [:react-native-safe-area-context] C:\Users\Natalia\Documents\GitHub\
 MERGED from [:react-native-safe-area-context] C:\Users\Natalia\Documents\GitHub\cloud3nis-hw4-Doskach_N\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] C:\Users\Natalia\Documents\GitHub\cloud3nis-hw4-Doskach_N\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] C:\Users\Natalia\Documents\GitHub\cloud3nis-hw4-Doskach_N\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-vector-icons] C:\Users\Natalia\Documents\GitHub\cloud3nis-hw4-Doskach_N\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-vector-icons] C:\Users\Natalia\Documents\GitHub\cloud3nis-hw4-Doskach_N\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:0.66.0] C:\Users\Natalia\.gradle\caches\transforms-3\548e983e2fa4cfa186578c41faedaeae\transformed\jetified-react-native-0.66.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:0.66.0] C:\Users\Natalia\.gradle\caches\transforms-3\548e983e2fa4cfa186578c41faedaeae\transformed\jetified-react-native-0.66.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Natalia\.gradle\caches\transforms-3\9341f36f0ce470d4b55127e33c2ce075\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44

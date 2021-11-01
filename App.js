@@ -2,57 +2,24 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Context} from './Context';
+import { Provider } from 'react-redux'
+//import {Context} from './Context';
 import HomeScreen from './HomeScreen';
 import CreateScreen from './CreateScreen';
 import ChangeScreen from './ChangeScreen';
+import store from './Store'
+
 
 const Stack = createNativeStackNavigator();
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      notes: [],
-      currentNoteIndex: -1,
-    };
   }
-
-  addNote = note => {
-//let xhr = new XMLHttpRequest();
-//xhr.open('get', 'http://localhost:3000/notes');
-//xhr.send();
-//xhr.onload = function() {
-//    console.log(xhr.response);
-//};
-    this.setState({notes: [...this.state.notes, note]});
-  };
-
-  changeNote = note => {
-    let index = this.state.currentNoteIndex;
-    this.setState({
-      notes: [
-        ...this.state.notes.slice(0, index),
-        note,
-        ...this.state.notes.slice(index + 1),
-      ],
-    });
-  };
-
-  changeIndex = index => {
-    this.setState({currentNoteIndex: index});
-  };
 
   render() {
     return (
-      <Context.Provider
-        value={{
-          currentNoteIndex: this.state.currentNoteIndex,
-          notes: this.state.notes,
-          addNote: this.addNote,
-          changeNote: this.changeNote,
-          changeIndex: this.changeIndex,
-        }}>
+      <Provider store={store}>
         <NavigationContainer>
           <Stack.Navigator
             screenOptions={{
@@ -63,10 +30,15 @@ class App extends React.Component {
             <Stack.Screen name="Change" component={ChangeScreen} />
           </Stack.Navigator>
         </NavigationContainer>
-      </Context.Provider>
+      </Provider>
     );
   }
 }
+
+//connect(
+//state => ({notes: state}),
+//dispatch => ({})
+//)(App);
 
 const styles = StyleSheet.create({
   container: {
@@ -77,4 +49,5 @@ const styles = StyleSheet.create({
   },
 });
 
+//export {connect}
 export default App;

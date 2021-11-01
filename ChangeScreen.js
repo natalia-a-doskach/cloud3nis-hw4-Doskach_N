@@ -12,18 +12,19 @@ import {
   Dimensions,
   SafeAreaView,
 } from 'react-native';
-import {Context} from './Context';
+import {changeNote} from './Actions'
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+import store from './Store'
 
 class ChangeScreen extends React.Component {
   state;
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
     this.launchImageLibrary = this.launchImageLibrary.bind(this);
     this.state = {
-      title: this.context.notes[this.context.currentNoteIndex].title,
-      note: this.context.notes[this.context.currentNoteIndex].note,
-      fileUris: context.notes[this.context.currentNoteIndex].images,
+        title: store.getState().notes[store.getState().currentIndex].title,
+        note: store.getState().notes[store.getState().currentIndex].note,
+        fileUris: store.getState().notes[store.getState().currentIndex].fileUris,
     };
   }
   launchImageLibrary() {
@@ -56,13 +57,13 @@ class ChangeScreen extends React.Component {
       <SafeAreaView style={styles.container}>
         <TextInput
           style={styles.forms}
-          defaultValue={this.context.notes[this.context.currentNoteIndex].title}
+          defaultValue={store.getState().notes[store.getState().currentIndex].title}
           onChangeText={value => this.setState({title: value})}
           placeholder="title"
           placeholderStyle={styles.body}
         />
         <TextInput
-          defaultValue={this.context.notes[this.context.currentNoteIndex].note}
+          defaultValue={store.getState().notes[store.getState().currentIndex].title}
           onChangeText={value => this.setState({note: value})}
           style={styles.body}
           multiline={true}
@@ -91,9 +92,9 @@ class ChangeScreen extends React.Component {
             let note = {
               title: this.state.title == '' ? 'Untitled' : this.state.title,
               note: this.state.note,
-              images: this.state.fileUris,
+              fileUris: this.state.fileUris,
             };
-            this.context.changeNote(note);
+            changeNote(note);
             this.props.navigation.navigate('Home');
           }}>
           <Text style={styles.text}>Save Note</Text>
@@ -103,7 +104,7 @@ class ChangeScreen extends React.Component {
   }
 }
 
-ChangeScreen.contextType = Context;
+//ChangeScreen.contextType = Context;
 
 const styles = StyleSheet.create({
   container: {
