@@ -1,4 +1,5 @@
 import React from 'react';
+import {useEffect} from 'react';
 import {
   StyleSheet,
   Text,
@@ -11,8 +12,7 @@ import {
   Image
 } from 'react-native';
 //import {Context} from './Context';
-import {changeIndex} from './Actions'
-import {deleteNote} from './Actions'
+import {changeIndex, deleteNote, getNotes} from './Actions'
 //import { Icon } from 'react-native-elements'
 import store from './Store'
 import { connect } from 'react-redux'
@@ -33,10 +33,9 @@ class HomeScreen extends React.Component {
             contentContainerStyle={{minHeight: '100%'}}>
             {
              this.props.notes.map((note, index) => (
-             <View >
+             <View key={index}>
               <Pressable
                 style={styles.buttons}
-                key={index}
                 title={`${note.title}`}
                 onPress={() => {
                   changeIndex(index);
@@ -99,10 +98,8 @@ const styles = StyleSheet.create({
     image: {
       width: 30,
       height: 30,
-      color: 'white',
       backgroundColor: '#108afc',
       borderRadius: 15,
-      elevation: 3,
       alignSelf: 'center',
     },
   text: {

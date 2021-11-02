@@ -8,6 +8,7 @@ import HomeScreen from './HomeScreen';
 import CreateScreen from './CreateScreen';
 import ChangeScreen from './ChangeScreen';
 import store from './Store'
+import {putNotes, getNotes} from './Actions'
 
 
 const Stack = createNativeStackNavigator();
@@ -15,6 +16,7 @@ const Stack = createNativeStackNavigator();
 class App extends React.Component {
   constructor(props) {
     super(props);
+    getNotes();
   }
 
   render() {
@@ -39,6 +41,7 @@ class App extends React.Component {
 //state => ({notes: state}),
 //dispatch => ({})
 //)(App);
+
 
 const styles = StyleSheet.create({
   container: {

@@ -1,4 +1,6 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga'
+import mySaga from './sagas'
 
 const initialState = {
   currentIndex: -1,
@@ -24,11 +26,17 @@ function reducer(state = initialState, action) {
                                ] }
     case 'changeIndex':
       return { ...state, currentIndex: action.index }
+    case 'fetch_success':
+      return { ...state, notes: action.notes }
     default:
       return state
   }
 }
 
-const store = createStore(reducer)
+const sagaMiddleware = createSagaMiddleware()
+
+const store = createStore(reducer, applyMiddleware(sagaMiddleware))
+
+sagaMiddleware.run(mySaga)
 
 export default store

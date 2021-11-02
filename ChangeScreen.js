@@ -12,7 +12,7 @@ import {
   Dimensions,
   SafeAreaView,
 } from 'react-native';
-import {changeNote} from './Actions'
+import {changeNote, putNotes} from './Actions'
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 import store from './Store'
 
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     textAlignVertical: 'top',
     backgroundColor: '#BCDCF9',
-    textColor: 'black',
+//    textColor: 'black',
     fontSize: 16,
     lineHeight: 21,
     letterSpacing: 0.25,

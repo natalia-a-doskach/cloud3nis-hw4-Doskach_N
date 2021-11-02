@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 //import {Context} from './Context';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
-import {addNote} from './Actions'
+import {addNote, putNotes} from './Actions'
 import store from './Store'
 
 class CreateScreen extends React.Component {
@@ -93,6 +93,7 @@ class CreateScreen extends React.Component {
               fileUris: this.state.fileUris,
             };
             addNote(note);
+
             this.props.navigation.navigate('Home');
           }}>
           <Text style={styles.text}>Save Note</Text>
